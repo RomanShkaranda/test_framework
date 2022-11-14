@@ -1,6 +1,7 @@
 import configparser
+from CONSTANTS import ROOT_DIR
 
-abs_path = '/Users/mac/Documents/pythonProjects/test_framework/configurations/configuration.ini'
+abs_path = f'{ROOT_DIR}/configurations/configuration.ini'
 config = configparser.RawConfigParser()
 config.read(abs_path)
 
