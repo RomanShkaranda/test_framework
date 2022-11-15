@@ -1,5 +1,7 @@
 import pytest
+
 from page_objects.login_page import LoginPage
+from page_objects.main_page import MainPage
 from utilities.config_parser import ReadConfig
 from utilities.driver_factory import DriverFactory
 
@@ -16,3 +18,5 @@ def create_driver():
 @pytest.fixture()
 def open_login_page(create_driver):
     return LoginPage(create_driver)
+
+
