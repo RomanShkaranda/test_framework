@@ -20,3 +20,12 @@ def open_login_page(create_driver):
     return LoginPage(create_driver)
 
 
+@pytest.fixture()
+def open_main_page(open_login_page):
+    return open_login_page.login(ReadConfig.get_user_name(), ReadConfig.get_password())
+
+
+@pytest.fixture()
+def open_cart_page(open_main_page):
+    return open_main_page.open_cart_button()
+
