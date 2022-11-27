@@ -23,3 +23,15 @@ class ReadConfig:
     def get_browser_id():
         return config.get('browser_info', 'browser_id')
 
+    @staticmethod
+    def get_first_name():
+        return config.get('user_info', 'first_name')
+
+    @staticmethod
+    def get_last_name():
+        return config.get('user_info', 'last_name')
+
+    @staticmethod
+    def get_postal_code():
+        return config.get('user_info', 'postal_code')
+
