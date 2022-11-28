@@ -15,6 +15,7 @@ class ShipmentInfoPage(BasePage):
     __postal_code= (By.CSS_SELECTOR, '#postal-code')
     __cart_button = (By.XPATH, '//div[@id="shopping_cart_container"]')
     __robot = (By.XPATH, '//img[@class="footer_robot"]')
+    __error_text = (By.XPATH, '//h3[@data-test="error"]')
 
     def is_submit_visible(self):
         return self._is_visible(self.__submit_button)
@@ -45,3 +46,5 @@ class ShipmentInfoPage(BasePage):
         return self._is_visible(self.__robot)
 
 
+    def get_error_text(self):
+        return self._get_text(self.__error_text)
