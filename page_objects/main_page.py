@@ -11,7 +11,7 @@ class MainPage(BasePage):
     __add_to_cart_backpack = (By.XPATH, '//button[@id="add-to-cart-sauce-labs-backpack"]')
     __add_jacket_to_cart = (By.XPATH, '//button[@name="add-to-cart-sauce-labs-fleece-jacket"]')
     __login_error = (By.XPATH, '//h3[@data-test="error"]')
-    __t_shirt = (By.XPATH, '//img[@src="/static/media/bolt-shirt-1200x1500.c0dae290.jpg"]')
+    __t_shirt = (By.CSS_SELECTOR, '#item_1_img_link')
     __dropdown = (By.XPATH, '//button[@id="react-burger-menu-btn"]')
 
     def is_cart_visible(self):

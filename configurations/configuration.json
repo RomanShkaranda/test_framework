@@ -1,0 +1,18 @@
+{
+    "application_info": {
+        "base_url": "https://www.saucedemo.com/"
+    },
+    "user_info": {
+        "user_name": "standard_user",
+        "password": "secret_sauce",
+        "first_name": "John",
+        "last_name": "Smith",
+        "postal_code": "0835"
+    },
+    "browser_info": {
+        "browser_id": "1"
+    },
+    "error_texts": {
+        "first_name_error": "Error: First Name is required"
+    }
+}

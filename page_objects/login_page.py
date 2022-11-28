@@ -28,10 +28,10 @@ class LoginPage(BasePage):
         self.set_user_name(user_name).set_password(password).click_login()
         return MainPage(self.__driver)
 
-    def if_login_visible(self):
+    def is_login_visible(self):
         return self._is_visible(self.__login_button)
 
-    def if_login_logo_visible(self):
+    def is_login_logo_visible(self):
         return self._is_visible(self.__login_logo)
 
 

@@ -33,4 +33,10 @@ class BasePage:
         except TimeoutException:
             return False
 
+    def _get_text(self, locator):
+        element = self.__wait_until_element_visible(locator)
+        text = element.text
+        return text
+
+
 
