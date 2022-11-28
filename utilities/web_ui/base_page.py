@@ -33,3 +33,4 @@ class BasePage:
         except TimeoutException:
             return False
 
+
