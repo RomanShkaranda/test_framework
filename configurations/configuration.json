@@ -1,6 +1,7 @@
 {
     "application_info": {
-        "base_url": "https://www.saucedemo.com/"
+        "base_url": "https://www.saucedemo.com/",
+        "API_url": "https://gorest.co.in"
     },
     "user_info": {
         "user_name": "standard_user",
