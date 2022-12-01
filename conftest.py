@@ -2,6 +2,7 @@ import json
 import pytest
 
 from CONSTANTS import ROOT_DIR
+from api_collection.data.user_data import User
 from page_objects.login_page import LoginPage
 from utilities.config_parser import ReadConfig
 from utilities.configuration import Configuration
@@ -56,5 +57,9 @@ def open_checkout_overview_page(open_shipment_info_page, data_store):
     page.set_postal_code(data_store.user_info['postal_code'])
     return page.click_continue()
 
+
+@pytest.fixture()
+def create_user():
+    return User()
 
 
