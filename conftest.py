@@ -1,6 +1,7 @@
 import json
+from contextlib import suppress
+import allure
 import pytest
-
 from CONSTANTS import ROOT_DIR
 from api_collection.data.user_data import User
 from page_objects.login_page import LoginPage
@@ -19,12 +20,24 @@ def data_store():
         return config
 
 
+@pytest.hookimpl(hookwrapper=True, tryfirst=True)
+def pytest_runtest_makereport(item, call):
+    outcome = yield
+    rep = outcome.get_result()
+    setattr(item, "rep_" + rep.when, rep)
+    return rep
+
+
 @pytest.fixture()
-def create_driver(data_store):
+def create_driver(data_store, request):
     chrome_driver = DriverFactory.create_driver(ReadConfig.get_browser_id())
     chrome_driver.maximize_window()
     chrome_driver.get(data_store.application_info['base_url'])
     yield chrome_driver
+    if request.node.rep_call.failed:
+        with suppress(Exception):
+            allure.attach(chrome_driver.get_screenshot_as_png(), name=request.function.__name__,
+                          attachment_type=allure.attachment_type.PNG)
     chrome_driver.quit()
 
 
