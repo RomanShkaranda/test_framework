@@ -1,8 +1,11 @@
 from selenium.webdriver.common.by import By
+
+from decorators import auto_step
 from page_objects.main_page import MainPage
 from utilities.web_ui.base_page import BasePage
 
 
+@auto_step
 class LoginPage(BasePage):
     def __init__(self, driver):
         self.__driver = driver

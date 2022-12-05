@@ -1,7 +1,9 @@
 {
     "application_info": {
         "base_url": "https://www.saucedemo.com/",
-        "API_url": "https://gorest.co.in"
+        "API_url": "https://gorest.co.in/",
+        "token": "Bearer f17f3e0918e07151c1196b7dfbc4660cfd4598017a6dc9b03d8754759c442c3c",
+        "header": "Authorization"
     },
     "user_info": {
         "user_name": "standard_user",

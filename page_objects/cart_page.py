@@ -1,8 +1,10 @@
+from decorators import auto_step
 from page_objects.shipment_info_page import ShipmentInfoPage
 from utilities.web_ui.base_page import BasePage
 from selenium.webdriver.common.by import By
 
 
+@auto_step
 class CartPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
