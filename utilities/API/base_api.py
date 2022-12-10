@@ -34,4 +34,3 @@ class BaseAPI:
         return response
 
 
-print(BaseAPI().__dict__)

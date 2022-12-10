@@ -1,5 +1,5 @@
 from api_collection.data.user_data import User
-from utilities.API.BaseAPI import BaseAPI
+from utilities.API.base_api import BaseAPI
 
 
 class UsersAPI(BaseAPI):
