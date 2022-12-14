@@ -1,0 +1,18 @@
+brew services start postgresql
+psql postgres
+\password
+create database store;
+psql store
+create table products (id serial, name varchar(10), price int);
+alter table products add primary key(id);
+create table orders (id int primary key, product_id int, constraint fk_product_id foreign key(product_id) references products(id));
+alter table orders add column quantity int;
+insert into products (name, price) values ('soup', 20);
+insert into products (name, price) values ('salad', 30);
+insert into products (name, price) values ('potato', 30);
+insert into products (name, price) values ('pasta', 50);
+insert into products (name, price) values ('beverage', 10);
+insert into orders (id, product_id, quantity) values (1, 3, 2);
+insert into orders (id, product_id, quantity) values (2, 4, 1);
+insert into orders (id, product_id, quantity) values (3, 1, 2), (4, 2, 2), (5, 5, 6);
+select p.name, p.price, o.quantity from products as p join orders as o on o.product_id = p.id;
