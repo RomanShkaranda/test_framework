@@ -1,3 +1,5 @@
+from pprint import pprint
+
 from mongo_collections.schools_list import SchoolsCollection
 
 ins_list = [
@@ -6,11 +8,13 @@ ins_list = [
     {'number': 17, 'capacity': 100, 'principle': 'Arron P'}
 ]
 
-SchoolsCollection().insert_one(1, 24, 'Roman S')
+SchoolsCollection().insert_one({'number': 1, 'capacity': 240, 'principle': 'Roman S'})
 SchoolsCollection().insert_many(ins_list)
 SchoolsCollection().delete_by_number(35)
 SchoolsCollection().find_one_by_number(44)
 SchoolsCollection().delete_all()
-SchoolsCollection().find_all()
+SchoolsCollection().insert_one({'name': 'Smith'})
+SchoolsCollection().insert_one_school_item(1, 200, 'Jose L')
+pprint(SchoolsCollection().find_all())
 
 
