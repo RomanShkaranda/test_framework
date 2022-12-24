@@ -4,7 +4,7 @@ from api_collection.postsAPI import PostsAPI
 
 
 def test_get_user_by_id():
-    user = UsersAPI().get_user_by_id('4934')
+    user = UsersAPI().get_user_by_id(4934)
     expected_status_code = HTTPStatus.OK
     assert user.status_code == expected_status_code
 
