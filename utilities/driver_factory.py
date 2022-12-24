@@ -3,6 +3,8 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
+from selenium.webdriver.chrome.options import Options
+
 
 
 class DriverFactory:
@@ -13,7 +15,10 @@ class DriverFactory:
     @staticmethod
     def create_driver(driver_id):
         if int(driver_id) == DriverFactory.CHROME:
-            driver = Chrome(service=Service(ChromeDriverManager().install()))
+            chrome_options = Options()
+            chrome_options.add_argument('--headless')
+            chrome_options.add_argument('--no-sandbox')
+            driver = Chrome(service=Service(ChromeDriverManager().install()), chrome_options=chrome_options)
         elif int(driver_id) == DriverFactory.FIREFOX:
             driver = Firefox(service=Service(GeckoDriverManager().install()))
         elif int(driver_id) == DriverFactory.EDGE:
