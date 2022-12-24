@@ -14,6 +14,3 @@ class UsersAPI(BaseAPI):
         body = User(id=4934, name="Deeptimoy Malik", email="malik_deeptimoy@muller-abbott.info", gender="male", status="active")\
             .get_dict()
         return self.post(f'{self.__url}', body=body)
-
-user = UsersAPI.create_user()
-print(user)

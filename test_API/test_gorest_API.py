@@ -15,9 +15,5 @@ def test_get_posts():
     assert posts.status_code == HTTPStatus.OK
 
 
-def test_check_users(create_user):
-    expected_user = create_user.get_dict()
-    user = UsersAPI().get_user_by_id()
-    actual_user = user.json()
-    assert expected_user == actual_user
+
 
