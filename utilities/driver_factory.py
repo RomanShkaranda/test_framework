@@ -6,7 +6,6 @@ from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from selenium.webdriver.chrome.options import Options
 
 
-
 class DriverFactory:
     CHROME = 1
     FIREFOX = 2

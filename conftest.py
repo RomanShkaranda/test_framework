@@ -1,23 +1,16 @@
-import json
 from contextlib import suppress
 import allure
 import pytest
-from CONSTANTS import ROOT_DIR
 from api_collection.data.user_data import User
 from page_objects.login_page import LoginPage
 from utilities.config_parser import ReadConfig
-from utilities.configuration import Configuration
 from utilities.driver_factory import DriverFactory
+from utilities.read_json import data_store as d_store
 
 
 @pytest.fixture(scope='session')
 def data_store():
-    with open(f'{ROOT_DIR}/configurations/configuration.json') as f:
-        data = f.read()
-        json_to_dict = json.loads(data)
-
-        config = Configuration(**json_to_dict)
-        return config
+    return d_store()
 
 
 @pytest.hookimpl(hookwrapper=True, tryfirst=True)
