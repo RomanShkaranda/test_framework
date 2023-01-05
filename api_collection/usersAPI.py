@@ -7,7 +7,7 @@ class UsersAPI(BaseAPI):
         super().__init__()
         self.__url = 'public/v2/users'
 
-    def get_user_by_id(self, user_id=3404):
+    def get_user_by_id(self, user_id=4934):
         return self.get(f'{self.__url}/{user_id}')
 
     def create_user(self):
